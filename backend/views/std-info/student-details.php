@@ -85,7 +85,14 @@
                 </tr>
                 <tr>
                     <th>Age</th>
-                    <td><?php echo $stdInfo[0]['age']; ?></td>
+                    <td>
+                        <?php 
+                            $bday = new DateTime($stdInfo[0]['dob']); // Your date of birth
+                            $today = new Datetime(date('m.d.y'));
+                            $diff = $today->diff($bday);
+                            echo $diff->y." Years ".$diff->m." Months ".$diff->d." Days ";
+                        ?>
+                    </td>
                 </tr>
                 <tr>
                     <th>Current Address</th>

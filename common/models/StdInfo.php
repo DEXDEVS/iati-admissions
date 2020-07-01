@@ -51,7 +51,7 @@ class StdInfo extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['session', 'quotta', 'fullname', 'f_name', 'p_address', 'c_address', 'f_occupation', 'phone', 'd_district', 'dob', 'age', 'email', 'n_o_copies', 'institute1', 'board1', 'passing_year1', 'obtain_marks1', 'total_marks1', 'grade1', 'photo'], 'required'],
+            [['session', 'quotta', 'fullname', 'f_name', 'p_address', 'c_address', 'f_occupation', 'phone', 'd_district', 'dob', 'email', 'n_o_copies', 'institute1', 'board1', 'passing_year1', 'obtain_marks1', 'total_marks1', 'grade1', 'photo'], 'required'],
             [['session', 'dob', 'passing_year1', 'passing_year2'], 'safe'],
             [['quotta'], 'string'],
             [['n_o_copies', 'obtain_marks1', 'total_marks1', 'obtain_marks2', 'total_marks2'], 'integer'],
@@ -104,8 +104,8 @@ class StdInfo extends \yii\db\ActiveRecord
     }
     
     public function getPhotoInfo(){
-        $path = Url::to('@web/uploads/');
-        $url = Url::to('@web/uploads/');
+        $path = Url::to('@backend/web/uploads/');
+        $url = Url::to('@backend/web/uploads/');
         $filename = $this->fullname.'_photo'.'.jpg';
         $alt = $this->fullname."'s image not exist!";
 

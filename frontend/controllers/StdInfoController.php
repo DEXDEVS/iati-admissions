@@ -106,7 +106,7 @@ class StdInfoController extends Controller
                     $model->photo = UploadedFile::getInstance($model,'photo');
                     if(!empty($model->photo)){
                         $imageName = $model->fullname.'_photo'; 
-                        $model->photo->saveAs('uploads/'.$imageName.'.'.$model->photo->extension);
+                        $model->photo->saveAs('@backend/web/uploads/'.$imageName.'.'.$model->photo->extension);
                         //save the path in the db column
                         $model->photo = 'uploads/'.$imageName.'.'.$model->photo->extension;
                     } else {
