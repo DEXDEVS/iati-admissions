@@ -19,7 +19,6 @@ use dosamigos\datetimepicker\DateTimePicker;
         <div class="col-md-6">
             <?= $form->field($model, 'quotta')->dropDownList([ 'Open Merit' => 'Open Merit', 'Quotta' => 'Quotta', ], ['prompt' => 'Select Quotta']) ?>
         </div>
-        
     </div>
     <div class="row">
         <div class="col-md-4">
@@ -67,7 +66,7 @@ use dosamigos\datetimepicker\DateTimePicker;
             <?= $form->field($model, 'n_o_copies')->textInput() ?>
         </div>
         <div class="col-md-4">
-            <?= $form->field($model, 'photo')->fileInput() ?>
+            <?= $form->field($model, 'admission_date')->textInput(['value'=> date("Y-m-d"), 'readonly' => true]) ?>
         </div>
     </div>
 

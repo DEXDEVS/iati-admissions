@@ -23,7 +23,7 @@ use yii\widgets\DetailView;
             'dob',
             'age',
             'email:email',
-            'photo',
+            'admission_date',
             'n_o_copies',
             'institute1',
             'board1',

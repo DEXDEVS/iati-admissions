@@ -103,15 +103,16 @@ class StdInfoController extends Controller
             }else if($model->load($request->post()) && $model->validate()){
                 $transaction = \Yii::$app->db->beginTransaction();
                 try {
-                    $model->photo = UploadedFile::getInstance($model,'photo');
-                    if(!empty($model->photo)){
-                        $imageName = $model->fullname.'_photo'; 
-                        $model->photo->saveAs('uploads/'.$imageName.'.'.$model->photo->extension);
-                        //save the path in the db column
-                        $model->photo = 'uploads/'.$imageName.'.'.$model->photo->extension;
-                    } else {
-                       $model->photo = 'uploads/'.'std_default.jpg'; 
-                    }
+                    // $model->photo = UploadedFile::getInstance($model,'photo');
+                    // if(!empty($model->photo)){
+                    //     $imageName = $model->fullname.'_photo'; 
+                    //     $model->photo->saveAs('uploads/'.$imageName.'.'.$model->photo->extension);
+                    //     //save the path in the db column
+                    //     $model->photo = 'uploads/'.$imageName.'.'.$model->photo->extension;
+                    // } else {
+                    //    $model->photo = 'uploads/'.'std_default.jpg'; 
+                    // }
+                    $model->admission_date = new \yii\db\Expression('NOW()');
                     $model->save();
                     $transaction->commit();
                         Yii::$app->session->setFlash('success', "You Have Successfully Submitted Your Admission Form...!");
@@ -144,15 +145,16 @@ class StdInfoController extends Controller
             if ($model->load($request->post())) {
                 $transaction = \Yii::$app->db->beginTransaction();
                 try {
-                    $model->photo = UploadedFile::getInstance($model,'photo');
-                    if(!empty($model->photo)){
-                        $imageName = $model->fullname.'_photo'; 
-                        $model->photo->saveAs('uploads/'.$imageName.'.'.$model->photo->extension);
-                        //save the path in the db column
-                        $model->photo = 'uploads/'.$imageName.'.'.$model->photo->extension;
-                    } else {
-                       $model->photo = 'uploads/'.'std_default.jpg'; 
-                    }
+                    // $model->photo = UploadedFile::getInstance($model,'photo');
+                    // if(!empty($model->photo)){
+                    //     $imageName = $model->fullname.'_photo'; 
+                    //     $model->photo->saveAs('uploads/'.$imageName.'.'.$model->photo->extension);
+                    //     //save the path in the db column
+                    //     $model->photo = 'uploads/'.$imageName.'.'.$model->photo->extension;
+                    // } else {
+                    //    $model->photo = 'uploads/'.'std_default.jpg'; 
+                    // }
+                    $model->admission_date = new \yii\db\Expression('NOW()');
                     $model->save();
                     $transaction->commit();
                         Yii::$app->session->setFlash('success', "You Have Successfully Submitted Your Admission Form...!");

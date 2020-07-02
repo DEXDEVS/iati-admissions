@@ -108,15 +108,15 @@ class StdInfoController extends Controller
             }else if($model->load($request->post()) && $model->validate()){
                 $transaction = \Yii::$app->db->beginTransaction();
                 try {
-                    $model->photo = UploadedFile::getInstance($model,'photo');
-                    if(!empty($model->photo)){
-                        $imageName = $model->fullname.'_photo'; 
-                        $model->photo->saveAs('uploads/'.$imageName.'.'.$model->photo->extension);
-                        //save the path in the db column
-                        $model->photo = 'uploads/'.$imageName.'.'.$model->photo->extension;
-                    } else {
-                       $model->photo = 'uploads/'.'std_default.jpg'; 
-                    }
+                    // $model->photo = UploadedFile::getInstance($model,'photo');
+                    // if(!empty($model->photo)){
+                    //     $imageName = $model->fullname.'_photo'; 
+                    //     $model->photo->saveAs('uploads/'.$imageName.'.'.$model->photo->extension);
+                    //     //save the path in the db column
+                    //     $model->photo = 'uploads/'.$imageName.'.'.$model->photo->extension;
+                    // } else {
+                    //    $model->photo = 'uploads/'.'std_default.jpg'; 
+                    // }
                     $model->save();
                     $transaction->commit();
                         Yii::$app->session->setFlash('success', "You have successfully add Student...!");
@@ -186,16 +186,16 @@ class StdInfoController extends Controller
             }else if($model->load($request->post()) && $model->validate()){
                 $transaction = \Yii::$app->db->beginTransaction();
                 try {
-                    $stdInfo = Yii::$app->db->createCommand("SELECT photo FROM std_info where std_id = $id")->queryAll();
-                        $model->photo = UploadedFile::getInstance($model,'photo');
-                        if(!empty($model->photo)){
-                            $imageName = $model->fullname.'_photo'; 
-                            $model->photo->saveAs('uploads/'.$imageName.'.'.$model->photo->extension);
-                            //save the path in the db column
-                            $model->photo = 'uploads/'.$imageName.'.'.$model->photo->extension;
-                        } else {
-                           $model->photo = $stdInfo[0]['photo']; 
-                        }
+                    // $stdInfo = Yii::$app->db->createCommand("SELECT photo FROM std_info where std_id = $id")->queryAll();
+                    // $model->photo = UploadedFile::getInstance($model,'photo');
+                    // if(!empty($model->photo)){
+                    //     $imageName = $model->fullname.'_photo'; 
+                    //     $model->photo->saveAs('uploads/'.$imageName.'.'.$model->photo->extension);
+                    //     //save the path in the db column
+                    //     $model->photo = 'uploads/'.$imageName.'.'.$model->photo->extension;
+                    // } else {
+                    //    $model->photo = $stdInfo[0]['photo']; 
+                    // }
                     $model->save();
                     $transaction->commit();
                         Yii::$app->session->setFlash('success', "You Have Successfully Update Student Record...!");

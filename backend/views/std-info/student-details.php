@@ -28,17 +28,13 @@
             <h3 class="text-center" style="margin-top: -10px">Rahim Yar Khan</h3>
             <h4 class="text-center" style="margin-top: -10px">Three Year Field Assistant Diploma in Agriculture Science</h4>
             <h2 class="text-center" style="margin-top: -5px"><b>Student Details</b></h2>
+            <p class="text-center">Admission Date: <b><?php echo date("d-M-Y", strtotime($stdInfo[0]['admission_date'])); ?></b></p>
         </div>
     </div><br>
 
     <div class="row">
         <div class="col-md-6" style="float: left;">
             <table class="table">
-                <tr>
-                    <th rowspan="7">
-                        <img src="<?php echo $stdInfo[0]['photo'] ?>" class='img-circle' style="width: 120px; height: 120px; border: 4px solid gray;">
-                    </th>
-                </tr>
                 <tr>
                     <th>Student Name</th>
                     <td><?php echo $stdInfo[0]['fullname']; ?></td>

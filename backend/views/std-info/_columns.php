@@ -91,6 +91,10 @@ return [
         'attribute'=>'total_marks1',
     ],
     // [
+    //     'class'=>'\kartik\grid\DataColumn',
+    //     'attribute'=>'admission_date',
+    // ],
+    // [
         // 'class'=>'\kartik\grid\DataColumn',
         // 'attribute'=>'grade1',
     // ],

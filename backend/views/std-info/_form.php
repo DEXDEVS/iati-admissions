@@ -20,7 +20,7 @@ use dosamigos\datetimepicker\DateTimePicker;
             <?= $form->field($model, 'quotta')->dropDownList([ 'Open Merit' => 'Open Merit', 'Quotta' => 'Quotta', ], ['prompt' => 'Select Quotta']) ?>
         </div>
         <div class="col-md-4">
-            <?= $form->field($model, 'photo')->fileInput() ?>
+            <?= $form->field($model, 'admission_date')->textInput(['value'=> date("Y-m-d"), 'readonly' => true]) ?>
         </div>
     </div>
     <div class="row">

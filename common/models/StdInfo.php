@@ -51,8 +51,8 @@ class StdInfo extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['session', 'quotta', 'fullname', 'f_name', 'p_address', 'c_address', 'f_occupation', 'phone', 'd_district', 'dob', 'email', 'n_o_copies', 'institute1', 'board1', 'passing_year1', 'obtain_marks1', 'total_marks1', 'grade1', 'photo'], 'required'],
-            [['session', 'dob', 'passing_year1', 'passing_year2'], 'safe'],
+            [['session', 'quotta', 'fullname', 'f_name', 'p_address', 'c_address', 'f_occupation', 'phone', 'd_district', 'dob', 'email', 'n_o_copies', 'institute1', 'board1', 'passing_year1', 'obtain_marks1', 'total_marks1', 'grade1'], 'required'],
+            [['session', 'dob', 'passing_year1', 'passing_year2', 'admission_date', 'photo', 'age'], 'safe'],
             [['quotta'], 'string'],
             [['n_o_copies', 'obtain_marks1', 'total_marks1', 'obtain_marks2', 'total_marks2'], 'integer'],
             [['fullname', 'f_name', 'age', 'email'], 'string', 'max' => 60],
@@ -93,6 +93,7 @@ class StdInfo extends \yii\db\ActiveRecord
             'passing_year1' => 'Passing Year',
             'obtain_marks1' => 'Obtain Marks',
             'total_marks1' => 'Total Marks',
+            'admission_date' => 'Admission Date',
             'grade1' => 'Grade',
             'institute2' => 'Institute',
             'board2' => 'Board',
@@ -120,3 +121,4 @@ class StdInfo extends \yii\db\ActiveRecord
     }
 
 }
+

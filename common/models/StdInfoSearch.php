@@ -19,7 +19,7 @@ class StdInfoSearch extends StdInfo
     {
         return [
             [['std_id', 'n_o_copies', 'obtain_marks1', 'total_marks1', 'obtain_marks2', 'total_marks2'], 'integer'],
-            [['session', 'quotta', 'fullname', 'f_name', 'p_address', 'c_address', 'f_occupation', 'phone', 'd_district', 'dob', 'age', 'email', 'photo', 'institute1', 'board1', 'passing_year1', 'grade1', 'institute2', 'board2', 'passing_year2', 'grade2'], 'safe'],
+            [['session', 'quotta', 'fullname', 'f_name', 'p_address', 'c_address', 'f_occupation', 'phone', 'd_district', 'dob', 'age', 'email', 'photo', 'institute1', 'board1', 'passing_year1', 'admission_date', 'grade1', 'institute2', 'board2', 'passing_year2', 'grade2'], 'safe'],
         ];
     }
 
@@ -63,6 +63,7 @@ class StdInfoSearch extends StdInfo
             'passing_year1' => $this->passing_year1,
             'obtain_marks1' => $this->obtain_marks1,
             'total_marks1' => $this->total_marks1,
+            'admission_date' => $this->admission_date,
             'passing_year2' => $this->passing_year2,
             'obtain_marks2' => $this->obtain_marks2,
             'total_marks2' => $this->total_marks2,
@@ -78,6 +79,7 @@ class StdInfoSearch extends StdInfo
             ->andFilterWhere(['like', 'd_district', $this->d_district])
             ->andFilterWhere(['like', 'age', $this->age])
             ->andFilterWhere(['like', 'email', $this->email])
+            ->andFilterWhere(['like', 'photo', $this->photo])
             ->andFilterWhere(['like', 'institute1', $this->institute1])
             ->andFilterWhere(['like', 'board1', $this->board1])
             ->andFilterWhere(['like', 'grade1', $this->grade1])
