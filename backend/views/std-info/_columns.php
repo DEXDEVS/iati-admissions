@@ -10,18 +10,14 @@ return [
         'class' => 'kartik\grid\SerialColumn',
         'width' => '30px',
     ],
-    [
-        'class'=>'\kartik\grid\DataColumn',
-        'attribute'=>'std_id',
-    ],
+    // [
+    //     'class'=>'\kartik\grid\DataColumn',
+    //     'attribute'=>'std_id',
+    // ],
     // [
     //     'class'=>'\kartik\grid\DataColumn',
     //     'attribute'=>'session',
     // ],
-    [
-        'class'=>'\kartik\grid\DataColumn',
-        'attribute'=>'quotta',
-    ],
     [
         'class'=>'\kartik\grid\DataColumn',
         'attribute'=>'fullname',
@@ -29,6 +25,10 @@ return [
     [
         'class'=>'\kartik\grid\DataColumn',
         'attribute'=>'f_name',
+    ],
+    [
+        'class'=>'\kartik\grid\DataColumn',
+        'attribute'=>'quotta',
     ],
     // [
         // 'class'=>'\kartik\grid\DataColumn',

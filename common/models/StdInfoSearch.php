@@ -41,7 +41,7 @@ class StdInfoSearch extends StdInfo
      */
     public function search($params)
     {
-        $query = StdInfo::find();
+        $query = StdInfo::find()->orderBy(["obtain_marks1" => SORT_DESC]);
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
