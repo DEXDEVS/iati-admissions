@@ -53,6 +53,7 @@ CrudAsset::register($this);
                     'board1',
                     'passing_year1',
                     'obtain_marks1',
+                    'total_marks1',
                     'grade1',
                 ],
                 //Reader a export dropdown menu
