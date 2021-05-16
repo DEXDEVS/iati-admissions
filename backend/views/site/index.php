@@ -2,7 +2,7 @@
 
 /* @var $this yii\web\View */
 
-$this->title = 'My Yii Application';
+//$this->title = 'My Yii Application';
 ?>
 <div class="site-index">
     <div class="jumbotron" style="font-family: georgia">
@@ -14,6 +14,10 @@ $this->title = 'My Yii Application';
         <p>
             <a class="btn btn-lg btn-success" href="index.php?r=std-info">
                 Admissions List
+            </a>
+            <a class="btn btn-lg btn-warning" href="index.php?r=phone-book">
+                <i class="fa fa-sms"></i>
+                Phone Book
             </a>
         </p>
     </div>

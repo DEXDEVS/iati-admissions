@@ -11,8 +11,8 @@ use kartik\export\ExportMenu;
 /* @var $searchModel common\models\StdInfoSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Student Admissions Record';
-$this->params['breadcrumbs'][] = $this->title;
+//$this->title = 'Student Admissions Record';
+//$this->params['breadcrumbs'][] = $this->title;
 
 CrudAsset::register($this);
 
