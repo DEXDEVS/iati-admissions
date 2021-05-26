@@ -11,12 +11,18 @@ use kartik\export\ExportMenu;
 /* @var $searchModel common\models\StdInfoSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-//$this->title = 'Student Admissions Record';
-//$this->params['breadcrumbs'][] = $this->title;
+$this->title = 'Student Admissions Record';
+$this->params['breadcrumbs'][] = $this->title;
 
 CrudAsset::register($this);
 
 ?>
+<style type="text/css">
+    .panel-heading{
+        background-color: #001F3F;
+        color: white;
+    }
+</style>
 <div class="std-info-index">
     <div id="ajaxCrudDatatable">
         <?=GridView::widget([
@@ -66,7 +72,7 @@ CrudAsset::register($this);
             'condensed' => true,
             'responsive' => true,          
             'panel' => [
-                'type' => 'primary', 
+                'type' => '', 
                 'heading' => '<i class="glyphicon glyphicon-list"></i> Student Admissions Listing',
                 'before'=>'<em>* Resize table columns just like a spreadsheet by dragging the column edges.</em>',
                 // 'after'=>BulkButtonWidget::widget([

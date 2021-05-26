@@ -31,7 +31,7 @@ class PhoneBookController extends Controller
                         'allow' => true,
                     ],
                     [
-                        'actions' => ['logout', 'index', 'create', 'view', 'update', 'delete', 'bulk-delete' , 'bulk-sms', 'multiple-sms'],
+                        'actions' => ['logout', 'index', 'create', 'view', 'update', 'delete', 'bulk-delete' , 'bulk-sms', 'send-sms'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
@@ -346,7 +346,7 @@ class PhoneBookController extends Controller
         return $this->redirect(['/phone-book']);
     }
 
-    public function actionMultipleSms()
+    public function actionSendSms()
     {      
         $request = Yii::$app->request;
         // $pks = explode(',', $request->post( 'pks' )); // Array or selected records primary keys
@@ -378,7 +378,7 @@ class PhoneBookController extends Controller
             $data = "id=".$id."&pass=".$pass."&msg=".$message."&to=".$to."&lang=".$lang."&mask=".$mask."&type=".$type;
 
             // Send the POST request with cURL
-            $ch = curl_init('http://www.sms4connect.com/api/sendsms.php/sendsms/url');
+            $ch = curl_init('http://www.outreach.pk/api/sendsms.php/sendsms/url');
             curl_setopt($ch, CURLOPT_POST, true);
             curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
