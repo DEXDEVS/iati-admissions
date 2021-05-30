@@ -86,17 +86,10 @@ CrudAsset::register($this);
                 </div>
                 <form method="POST" action="">
                     <div class="modal-body"> 
-                        <label>Phone Numbers<label><br>
-                        <textarea name="to" rows="5" class="form-control" required="" id="to" placeholder="Phone Numbers Format 923001234567,923007654321..."></textarea>
-                        <label>Message Body</label><br>
+                        <p>Phone Numbers</p>
+                        <textarea name="to" rows="7" class="form-control" required="" id="to" placeholder="Phone Numbers Format 923001234567,923007654321..."></textarea>
+                        <p>Message Body</p>
                         <textarea name="message" rows="10" class="form-control" id="message" required=""></textarea>
-                        <!-- <p>
-                            <span><b>NOTE:</b> 160 characters = 1 SMS</span>
-                            <span id="remaining" class="pull-right">160 characters remaining </span>
-                            <span id="messages" style="text-align: center;">/ Count SMS(0)</span>
-                            <input type="hidden" value="" id="count"><br>
-                            <input type="text" value="" id="sms" style="border: none; color: green; font-weight: bold;" class="form-control">
-                        </p> -->
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-danger btn-flat pull-left" data-dismiss="modal">Close</button>
@@ -141,25 +134,6 @@ CrudAsset::register($this);
 ?> 
 <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 <script>
-// textarea sms counter....
-$(document).ready(function(){
-    var $remaining = $('#remaining'),
-    $messages = $remaining.next();
-    var numbers = '<?php //echo $countNumbers; ?>';
-    $('#message').keyup(function(){
-        var chars = this.value.length,
-        messages = Math.ceil(chars / 160),
-        remaining = messages * 160 - (chars % (messages * 160) || messages * 160);
-        $messages.text('/ Count SMS (' + messages + ')');
-        $messages.css('color', 'red');
-        $remaining.text(remaining + ' characters remaining');
-      
-        $('#count').val(messages);
-        var countSMS = $('#count').val();
-        //var sms = parseInt(countSMS * numbers);
-        $('#sms').val("Your Consumed SMS: (" + countSMS+ ")");
-    });
-});
 // Remove Flash Alert....
 $( document ).ready(function(){
     $('#alert').fadeIn(function(){
