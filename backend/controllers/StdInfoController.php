@@ -3,14 +3,15 @@
 namespace backend\controllers;
 
 use Yii;
-use common\models\StdInfo;
-use common\models\StdInfoSearch;
-use yii\web\Controller;
-use yii\web\NotFoundHttpException;
-use yii\filters\VerbFilter;
-use \yii\web\Response;
 use yii\helpers\Html;
+use yii\web\Controller;
+use \yii\web\Response;
 use yii\web\UploadedFile;
+use common\models\StdInfo;
+use yii\filters\VerbFilter;
+use yii\filters\AccessControl;
+use common\models\StdInfoSearch;
+use yii\web\NotFoundHttpException;
 
 /**
  * StdInfoController implements the CRUD actions for StdInfo model.
@@ -23,6 +24,20 @@ class StdInfoController extends Controller
     public function behaviors()
     {
         return [
+            'access' => [
+                'class' => AccessControl::className(),
+                'rules' => [
+                    [
+                        'actions' => ['login', 'error'],
+                        'allow' => true,
+                    ],
+                    [
+                        'actions' => ['logout', 'index', 'create', 'view', 'update', 'delete', 'bulk-delete' , 'bulk-sms'],
+                        'allow' => true,
+                        'roles' => ['@'],
+                    ],
+                ],
+            ],
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
@@ -310,4 +325,48 @@ class StdInfoController extends Controller
             throw new NotFoundHttpException('The requested page does not exist.');
         }
     }
+
+    public function actionBulkSms()
+    {      
+        $request = Yii::$app->request;
+        $pks = explode(',', $request->post( 'pks' )); // Array or selected records primary keys
+        $array = array();
+        // var_dump($array);
+        // die();
+        foreach ( $pks as $pk ) {
+            $phoneNo = Yii::$app->db->createCommand("SELECT phone FROM std_info WHERE std_id = '$pk'")->queryAll();
+            $number = $phoneNo[0]['phone'];
+            $numb = str_replace('-', '', $number);
+            $num = str_replace('+', '', $numb);
+                    
+            $array[] = $num;
+        }
+
+        $to = implode(',', $array);
+
+        if (isset($_POST['message'])) {
+            $message = $_POST['message'];
+        
+            $type = "xml";
+            $id = "rchiatiryk";
+            $pass = "institute29";
+            $lang = "English";
+            $mask = "IATI RYK";
+            $message = urlencode($message);
+            // Prepare data for POST request
+            $data = "id=".$id."&pass=".$pass."&msg=".$message."&to=".$to."&lang=".$lang."&mask=".$mask."&type=".$type;
+
+            // Send the POST request with cURL
+            $ch = curl_init('http://www.outreach.pk/api/sendsms.php/sendsms/url');
+            curl_setopt($ch, CURLOPT_POST, true);
+            curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            $result = curl_exec($ch); //This is the result from SMS4CONNECT
+            curl_close($ch);     
+
+            Yii::$app->session->setFlash('success', $result);
+        }
+        return $this->redirect(['/std-info']);
+    }
+
 }

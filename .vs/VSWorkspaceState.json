@@ -1,0 +1,11 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\backend",
+    "\\backend\\controllers",
+    "\\backend\\views",
+    "\\backend\\views\\phone-book"
+  ],
+  "SelectedNode": "\\backend\\views\\phone-book\\create.php",
+  "PreviewInSolutionExplorer": false
+}

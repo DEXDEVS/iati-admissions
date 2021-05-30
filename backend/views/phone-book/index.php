@@ -69,7 +69,8 @@ CrudAsset::register($this);
                             'data-confirm-title'=> 'SMS',
                             'data-confirm-message'=>'<textarea name="message" class="form-control" rows="10" placeholder="Type message here"></textarea>'
                         ]),
-                    ]).                        
+                    ]).
+                    
                     '<div class="clearfix"></div>',
             ]
         ])?>
@@ -134,7 +135,8 @@ CrudAsset::register($this);
         curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         $result = curl_exec($ch); //This is the result from SMS4CONNECT
-         curl_close($ch);  
+        curl_close($ch);  
+        Yii::$app->session->setFlash('success', $result);
     } // ending of if(isset($_POST));
 ?> 
 <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>

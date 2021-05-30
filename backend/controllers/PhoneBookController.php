@@ -31,7 +31,7 @@ class PhoneBookController extends Controller
                         'allow' => true,
                     ],
                     [
-                        'actions' => ['logout', 'index', 'create', 'view', 'update', 'delete', 'bulk-delete' , 'bulk-sms',],
+                        'actions' => ['logout', 'index', 'create', 'view', 'update', 'delete', 'bulk-delete' , 'bulk-sms'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
