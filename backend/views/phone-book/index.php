@@ -90,13 +90,13 @@ CrudAsset::register($this);
                         <textarea name="to" rows="5" class="form-control" required="" id="to" placeholder="Phone Numbers Format 923001234567,923007654321..."></textarea>
                         <label>Message Body</label><br>
                         <textarea name="message" rows="10" class="form-control" id="message" required=""></textarea>
-                        <p>
+                        <!-- <p>
                             <span><b>NOTE:</b> 160 characters = 1 SMS</span>
                             <span id="remaining" class="pull-right">160 characters remaining </span>
                             <span id="messages" style="text-align: center;">/ Count SMS(0)</span>
                             <input type="hidden" value="" id="count"><br>
                             <input type="text" value="" id="sms" style="border: none; color: green; font-weight: bold;" class="form-control">
-                        </p>
+                        </p> -->
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-danger btn-flat pull-left" data-dismiss="modal">Close</button>
