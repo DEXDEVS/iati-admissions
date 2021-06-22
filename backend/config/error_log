@@ -1,0 +1,11 @@
+[05-Jun-2021 02:31:17 America/New_York] PHP Warning:  Use of undefined constant YII_DEBUG - assumed 'YII_DEBUG' (this will throw an Error in a future version of PHP) in /home/ranaifwh/iatiryk.edu.pk/iati-admissions/backend/config/main.php on line 31
+[07-Jun-2021 23:11:48 America/New_York] PHP Fatal error:  Uncaught Error: Class 'yii\helpers\ArrayHelper' not found in /home/ranaifwh/iatiryk.edu.pk/iati-admissions/backend/config/codeception-local.php:3
+Stack trace:
+#0 {main}
+  thrown in /home/ranaifwh/iatiryk.edu.pk/iati-admissions/backend/config/codeception-local.php on line 3
+[19-Jun-2021 17:41:29 America/New_York] PHP Fatal error:  Uncaught Error: Class 'yii\helpers\ArrayHelper' not found in /home/ranaifwh/iatiryk.edu.pk/iati-admissions/backend/config/codeception-local.php:3
+Stack trace:
+#0 {main}
+  thrown in /home/ranaifwh/iatiryk.edu.pk/iati-admissions/backend/config/codeception-local.php on line 3
+[19-Jun-2021 17:54:38 America/New_York] PHP Warning:  Use of undefined constant YII_ENV_TEST - assumed 'YII_ENV_TEST' (this will throw an Error in a future version of PHP) in /home/ranaifwh/iatiryk.edu.pk/iati-admissions/backend/config/main-local.php on line 12
+[19-Jun-2021 19:01:57 America/New_York] PHP Warning:  Use of undefined constant YII_DEBUG - assumed 'YII_DEBUG' (this will throw an Error in a future version of PHP) in /home/ranaifwh/iatiryk.edu.pk/iati-admissions/backend/config/main.php on line 31

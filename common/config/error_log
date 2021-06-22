@@ -1,0 +1,16 @@
+[02-Jun-2021 09:52:20 America/New_York] PHP Fatal error:  Uncaught Error: Class 'yii\helpers\ArrayHelper' not found in /home/ranaifwh/iatiryk.edu.pk/iati-admissions/common/config/codeception-local.php:3
+Stack trace:
+#0 {main}
+  thrown in /home/ranaifwh/iatiryk.edu.pk/iati-admissions/common/config/codeception-local.php on line 3
+[19-Jun-2021 20:35:35 America/New_York] PHP Fatal error:  Uncaught Error: Class 'Yii' not found in /home/ranaifwh/iatiryk.edu.pk/iati-admissions/common/config/bootstrap.php:2
+Stack trace:
+#0 {main}
+  thrown in /home/ranaifwh/iatiryk.edu.pk/iati-admissions/common/config/bootstrap.php on line 2
+[19-Jun-2021 20:37:36 America/New_York] PHP Fatal error:  Uncaught Error: Class 'yii\helpers\ArrayHelper' not found in /home/ranaifwh/iatiryk.edu.pk/iati-admissions/common/config/codeception-local.php:3
+Stack trace:
+#0 {main}
+  thrown in /home/ranaifwh/iatiryk.edu.pk/iati-admissions/common/config/codeception-local.php on line 3
+[20-Jun-2021 07:30:00 America/New_York] PHP Fatal error:  Uncaught Error: Class 'Yii' not found in /home/ranaifwh/iatiryk.edu.pk/iati-admissions/common/config/bootstrap.php:2
+Stack trace:
+#0 {main}
+  thrown in /home/ranaifwh/iatiryk.edu.pk/iati-admissions/common/config/bootstrap.php on line 2
