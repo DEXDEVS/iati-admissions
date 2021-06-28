@@ -10,10 +10,19 @@ return [
         'class' => 'kartik\grid\SerialColumn',
         'width' => '30px',
     ],
-    // [
+        // [
         // 'class'=>'\kartik\grid\DataColumn',
         // 'attribute'=>'id',
     // ],
+    // [
+    //     'class'=>'\kartik\grid\DataColumn',
+    //     'attribute'=>'sms_groups_id',
+    // ],
+    [
+        'class'=>'\kartik\grid\DataColumn',
+        'attribute'=>'sms_groups_id',
+        'value'=>'smsGroups.group_name',
+    ],
     [
         'class'=>'\kartik\grid\DataColumn',
         'attribute'=>'contact_person',
@@ -39,8 +48,8 @@ return [
     //     'attribute'=>'created_by',
     // ],
     // [
-    //     'class'=>'\kartik\grid\DataColumn',
-    //     'attribute'=>'updated_by',
+        // 'class'=>'\kartik\grid\DataColumn',
+        // 'attribute'=>'updated_by',
     // ],
     [
         'class' => 'kartik\grid\ActionColumn',

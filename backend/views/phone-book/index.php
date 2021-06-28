@@ -10,7 +10,7 @@ use johnitvn\ajaxcrud\BulkButtonWidget;
 /* @var $searchModel common\models\PhoneBookSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Phone Book Directory';
+$this->title = 'Phone Books';
 $this->params['breadcrumbs'][] = $this->title;
 
 CrudAsset::register($this);
@@ -24,7 +24,7 @@ CrudAsset::register($this);
 </style>
 <div class="phone-book-index">
     <div id="ajaxCrudDatatable">
-    <button type="button" class="btn btn-primary btn-sm btn-flat fa fa-comments pull-right" data-toggle="modal" data-target="#modal-default"> Send <b>SMS</b> to <b>Multiple</b> Numbers</b></button><br><br>
+        <button type="button" class="btn btn-primary btn-sm btn-flat fa fa-comments pull-right" data-toggle="modal" data-target="#modal-default"> Send <b>SMS</b> to <b>Multiple</b> Numbers</b></button><br><br>
         <?=GridView::widget([
             'id'=>'crud-datatable',
             'dataProvider' => $dataProvider,
@@ -32,7 +32,7 @@ CrudAsset::register($this);
             'pjax'=>true,
             'columns' => require(__DIR__.'/_columns.php'),
             'toolbar'=> [
-                ['content'=>  
+                ['content'=>
                     Html::a('<i class="glyphicon glyphicon-plus"></i>', ['create'],
                     ['role'=>'modal-remote','title'=> 'Create new Phone Books','class'=>'btn btn-success']).
                     Html::a('<i class="glyphicon glyphicon-repeat"></i>', [''],
@@ -46,7 +46,7 @@ CrudAsset::register($this);
             'responsive' => true,          
             'panel' => [
                 'type' => '', 
-                'heading' => '<i class="glyphicon glyphicon-list"></i> Phone Book Directory listing',
+                'heading' => '<i class="glyphicon glyphicon-list"></i> Phone Books listing',
                 'before'=>'<em>* Resize table columns just like a spreadsheet by dragging the column edges.</em>',
                 'after'=>BulkButtonWidget::widget([
                         // 'buttons'=>Html::a('<i class="glyphicon glyphicon-trash"></i>&nbsp; Delete All',
@@ -75,7 +75,7 @@ CrudAsset::register($this);
             ]
         ])?>
     </div>
-    <!-- SMS MODAL Start -->
+<!-- SMS MODAL Start -->
     <div class="modal fade" id="modal-default">
         <div class="modal-dialog">
             <div class="modal-content">

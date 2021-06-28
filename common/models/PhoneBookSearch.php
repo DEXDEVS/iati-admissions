@@ -19,7 +19,7 @@ class PhoneBookSearch extends PhoneBook
     {
         return [
             [['id', 'created_by', 'updated_by'], 'integer'],
-            [['contact_person', 'phone_no', 'address', 'created_at', 'updated_at'], 'safe'],
+            [['sms_groups_id', 'contact_person', 'phone_no', 'address', 'created_at', 'updated_at'], 'safe'],
         ];
     }
 
@@ -55,6 +55,8 @@ class PhoneBookSearch extends PhoneBook
             return $dataProvider;
         }
 
+        $query->joinWith('smsGroups');
+
         $query->andFilterWhere([
             'id' => $this->id,
             'created_at' => $this->created_at,
@@ -65,7 +67,8 @@ class PhoneBookSearch extends PhoneBook
 
         $query->andFilterWhere(['like', 'contact_person', $this->contact_person])
             ->andFilterWhere(['like', 'phone_no', $this->phone_no])
-            ->andFilterWhere(['like', 'address', $this->address]);
+            ->andFilterWhere(['like', 'address', $this->address])
+            ->andFilterWhere(['like', 'sms_groups.group_name', $this->sms_groups_id]);;
 
         return $dataProvider;
     }

@@ -11,6 +11,7 @@ use yii\widgets\DetailView;
         'model' => $model,
         'attributes' => [
             'id',
+            'sms_groups_id',
             'contact_person',
             'phone_no',
             'address',

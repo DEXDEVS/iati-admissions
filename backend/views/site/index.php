@@ -15,9 +15,12 @@
             <a class="btn btn-lg btn-success" href="index.php?r=std-info">
                 Admissions List
             </a>
+            <a class="btn btn-lg btn-primary" href="index.php?r=sms-groups">
+                SMS Groups
+            </a>
             <a class="btn btn-lg btn-warning" href="index.php?r=phone-book">
                 <i class="fa fa-sms"></i>
-                Phone Book
+                Phone Directory
             </a>
         </p>
     </div>

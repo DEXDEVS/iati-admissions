@@ -118,6 +118,7 @@ class PhoneBookController extends Controller
             }else if($model->load($request->post()) && $model->validate()){
                 $transaction = \Yii::$app->db->beginTransaction();
                 try {
+                    $model->sms_groups_id = $model->sms_groups_id;
                     $model->created_by = Yii::$app->user->identity->id; 
                     $model->created_at = new \yii\db\Expression('NOW()');
                     $model->updated_by = '0';
